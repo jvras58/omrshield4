@@ -238,22 +238,6 @@ def ler_alternativa_marcada(imagem_linha_questao):
     return alternativas[indice_maior]
 
 
-def mapear_blocos_questoes():
-    # Valores médios cravados baseados nas suas medições
-    y_inicio = 1021
-    altura_bloco = 376
-    largura_bloco = 118
-    
-    # Lista com os X corretos (corrigi o bloco 4 para 539 matematicamente)
-    x_colunas = [63, 223, 381, 539, 696, 853] 
-    
-    blocos = {}
-    for i, x in enumerate(x_colunas):
-        numero_bloco = i + 1
-        blocos[numero_bloco] = (x, y_inicio, largura_bloco, altura_bloco)
-        
-    return blocos
-
 def extrair_respostas_do_bloco(imagem_padronizada, x, y, w, h, questao_inicial):
     """
     Recorta um bloco de 15 questões e fatia linha por linha para ler as respostas.
