@@ -64,27 +64,13 @@ def alinhar_pelos_marcadores(imagem_binarizada, imagem_original):
     return imagem_padronizada
 
 def mapear_blocos_questoes():
-    """
-    Retorna as coordenadas (X inicial, Y inicial, Largura, Altura)
-    dos 6 blocos de questões para uma imagem padronizada de 1000x1400.
-    """
-    # Como a imagem está travada em 1000x1400, essas coordenadas são estáticas.
-    # Elas representam a área exata onde ficam as bolinhas, ignorando os números das questões à esquerda.
+    # Os valores reais e exatos da sua medição corrigida!
+    y_inicio = 1023 
+    altura_bloco = 374
+    largura_bloco = 119
     
-    y_inicio = 950   # Linha onde começa a Questão 01
-    altura_bloco = 420 # Altura de um bloco de 15 questões
-    largura_bloco = 110 # Largura da área das 5 bolinhas (A,B,C,D,E)
-    
-    # Coordenadas X de onde começam as bolinhas (A) de cada coluna
-    # Estes valores foram estimados com base na proporção do seu layout
-    x_colunas = [
-        90,   # Bloco 1 (Q01 a Q15)
-        240,  # Bloco 2 (Q16 a Q30)
-        390,  # Bloco 3 (Q31 a Q45)
-        540,  # Bloco 4 (Q46 a Q60)
-        690,  # Bloco 5 (Q61 a Q75)
-        840   # Bloco 6 (Q76 a Q90)
-    ]
+    # O X começa em 63, e usamos as distâncias exatas que você mediu na primeira vez
+    x_colunas = [63, 223, 381, 539, 696, 853] 
     
     blocos = {}
     for i, x in enumerate(x_colunas):
